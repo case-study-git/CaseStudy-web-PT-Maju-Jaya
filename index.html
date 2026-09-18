@@ -5,32 +5,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistem Absensi Karyawan - PT Maju Jaya</title>
+
+    <!-- Pastikan nama file CSS sama dengan file yang kamu punya -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <div class="container">
+
         <header>
             <h1>Sistem Absensi Karyawan</h1>
             <p class="subtitle">PT Maju Jaya</p>
         </header>
 
+        <!-- FORM ABSENSI -->
         <section class="form-section">
             <h2>Input Data Absensi</h2>
-            <form id="formAbsensii">
+
+            <form id="formAbsensi">
+
                 <div class="form-group">
                     <label for="nama">Nama Karyawan</label>
-                    <input type="text" id="nama" name="nama" placeholder="Contoh: Budi Santoso" required>
+                    <input
+                        type="text"
+                        id="nama"
+                        name="nama"
+                        placeholder="Contoh: Budi Santoso"
+                        required
+                    >
                 </div>
 
                 <div class="form-group">
                     <label for="tanggal">Tanggal</label>
-                    <input type="date" id="tanggal" name="tanggal" required>
+                    <input
+                        type="date"
+                        id="tanggal"
+                        name="tanggal"
+                        required
+                    >
                 </div>
 
                 <div class="form-group">
                     <label for="status">Status Kehadiran</label>
+
                     <select id="status" name="status" required>
                         <option value="">-- Pilih Status --</option>
                         <option value="Hadir">Hadir</option>
@@ -40,31 +58,14 @@
                     </select>
                 </div>
 
-             <button type="submit" class="btn-submit">Simpan Absensi</button>
             </form>
         </section>
 
+        <!-- TABEL ABSENSI -->
         <section class="table-section">
             <h2>Data Absensi</h2>
-            <table id="tabelAbsensi">
-                <thead>
-                    <tr>
-                        <th>No</th>
-                        <th>Nama</th>
-                        <th>Tanggal</th>
-                        <th>Status</th>
-                        <th>Aksi</th>
-                    </tr>
-                </thead>
-                <tbody id="tbodyAbsensi">
-                    <!-- Data absensi akan ditampilkan di sini oleh JavaScript -->
-                </tbody>
-            </table>
-            <p id="emptyState" class="empty-state">Belum ada data absensi. Silakan tambahkan data di atas .</p>
+
         </section>
+
     </div>
 
-<script src="script.js"></script>
-</body>
-
-</html>

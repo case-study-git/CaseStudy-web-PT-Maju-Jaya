@@ -1,21 +1,41 @@
+/* =========================================
+   RESET
+========================================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* =========================================
+   BODY
+========================================= */
+
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     background-color: #f4f6f8;
     color: #2d3436;
     line-height: 1.5;
     padding: 20px;
 }
 
+
+/* =========================================
+   CONTAINER
+========================================= */
+
 .container {
+    width: 100%;
     max-width: 800px;
     margin: 0 auto;
 }
+
+
+/* =========================================
+   HEADER
+========================================= */
 
 header {
     text-align: center;
@@ -25,20 +45,28 @@ header {
 header h1 {
     color: #2c3e50;
     font-size: 28px;
+    margin-bottom: 5px;
 }
 
 .subtitle {
     color: #7f8c8d;
-    margin-top: 5px;
+    font-size: 15px;
 }
+
+
+/* =========================================
+   SECTION
+========================================= */
 
 .form-section,
 .table-section {
-    background: #ffffff;
+    background-color: #ffffff;
     border-radius: 8px;
     padding: 24px;
     margin-bottom: 24px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .form-section h2,
@@ -46,9 +74,15 @@ header h1 {
     margin-bottom: 16px;
     font-size: 18px;
     color: #2c3e50;
+
     border-bottom: 2px solid #ecf0f1;
     padding-bottom: 8px;
 }
+
+
+/* =========================================
+   FORM
+========================================= */
 
 .form-group {
     margin-bottom: 16px;
@@ -57,6 +91,7 @@ header h1 {
 .form-group label {
     display: block;
     margin-bottom: 6px;
+
     font-weight: 600;
     font-size: 14px;
 }
@@ -64,32 +99,75 @@ header h1 {
 .form-group input,
 .form-group select {
     width: 100%;
+
     padding: 10px 12px;
+
     border: 1px solid #dcdde1;
     border-radius: 6px;
+
+    background-color: #ffffff;
+
+    font-family: inherit;
     font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
+
     border-color: #3498db;
+
+    box-shadow:
+        0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
+
+/* =========================================
+   SUBMIT BUTTON
+========================================= */
+
 .btn-submit {
+    width: 100%;
+
     background-color: #3498db;
-    color: #fff;
+    color: #ffffff;
+
     border: none;
-    padding: 10px 20px;
     border-radius: 6px;
+
+    padding: 11px 20px;
+
     font-size: 14px;
     font-weight: 600;
+
     cursor: pointer;
-    transition: background-color 0.2s;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .btn-submit:hover {
     background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   TABLE
+========================================= */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
 }
 
 table {
@@ -100,22 +178,43 @@ table {
 th,
 td {
     text-align: left;
+
     padding: 10px 8px;
+
     border-bottom: 1px solid #ecf0f1;
+
     font-size: 14px;
 }
 
 th {
     color: #7f8c8d;
+
     font-weight: 600;
     font-size: 13px;
+
     text-transform: uppercase;
 }
 
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+
+/* =========================================
+   STATUS BADGE
+========================================= */
+
 .status-badge {
     display: inline-block;
+
     padding: 3px 10px;
+
     border-radius: 12px;
+
     font-size: 12px;
     font-weight: 600;
 }
@@ -140,23 +239,81 @@ th {
     color: #c0392b;
 }
 
+
+/* =========================================
+   HAPUS BUTTON
+========================================= */
+
 .btn-hapus {
     background-color: #e74c3c;
-    color: #fff;
+    color: #ffffff;
+
     border: none;
-    padding: 6px 12px;
     border-radius: 5px;
+
+    padding: 6px 12px;
+
     font-size: 12px;
+    font-weight: 600;
+
     cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
 }
 
 .btn-hapus:hover {
     background-color: #c0392b;
+    transform: translateY(-1px);
 }
+
+.btn-hapus:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================
+   EMPTY STATE
+========================================= */
 
 .empty-state {
     text-align: center;
+
     color: #95a5a6;
+
     padding: 20px 0;
+
     font-size: 14px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 12px;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    .form-section,
+    .table-section {
+        padding: 18px;
+    }
+
+    th,
+    td {
+        font-size: 13px;
+        padding: 9px 6px;
+    }
+
+    .btn-hapus {
+        padding: 5px 9px;
+    }
 }
