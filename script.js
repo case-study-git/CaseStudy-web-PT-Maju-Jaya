@@ -28,6 +28,7 @@ function getStatusClass(status) {
   };
   return map[status] || "";
 }
+//perbaikan
 
 // Render/tampilkan ulang seluruh data absensi ke dalam tabel
 function renderTabel() {
